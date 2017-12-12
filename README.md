@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # TimezoneApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
@@ -28,11 +26,3 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# timezone-app
-A simple angular4 based timezone app
->>>>>>> 79ec4b093acfd2964ba3a0a726f878cdd6b08456
-=======
-# timezone-app
-A simple angular4 based timezone app
->>>>>>> b829b2662c973493950953ec6b024a9ad81a2351
