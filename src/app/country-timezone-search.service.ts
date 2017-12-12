@@ -6,8 +6,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { Countrytimezone } 	from './countrytimezone';
-import {MomentModule} from 'angular2-moment';
-import {MomentTimezoneModule} from 'angular-moment-timezone';
 import * as moment from 'moment-timezone';
 
 @Injectable()
@@ -43,28 +41,6 @@ export class CountryTimezoneSearchService {
 		return countryToReturn;
 		}).catch(this.handleError);
 	} 
-
-
-getDate (timestamp:number)
-{
-// Multiply by 1000 because JS works in milliseconds instead of the UNIX seconds
-var date = new Date(timestamp * 1000);
-
-var year = date.getUTCFullYear();
-var month = date.getUTCMonth() + 1; // getMonth() is zero-indexed, so we'll increment to get the correct month number
-var day = date.getUTCDate();
-var hours = date.getUTCHours();
-var minutes = date.getUTCMinutes();
-var seconds = date.getUTCSeconds();
-
-var month1 = (month < 10) ? '0' + month : month;
-var day1 = (day < 10) ? '0' + day : day;
-var hours1 = (hours < 10) ? '0' + hours : hours;
-var minutes1 = (minutes < 10) ? '0' + minutes : minutes;
-var seconds1 = (seconds < 10) ? '0' + seconds: seconds;
-
-return year + '-' + month1 + '-' + day1 + ' ' + hours1 + ':' + minutes1;
-}
 
  	private handleError(error: any): Promise<any> {
      	console.error('An error occurred', error); // for demo purposes only
