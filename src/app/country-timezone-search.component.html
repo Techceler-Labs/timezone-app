@@ -7,8 +7,8 @@
   		</div>	
     	
   		<div  class="col-xs-2">
-    		<select [ngModel]="selectedCountry" (ngModelChange)="onCountryChange($event)"  class="form-control">
-       			<option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
+    		<select [(ngModel)]="selectedCountry" (ngModelChange)="onCountryChange($event)"  class="form-control">
+       			<option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
     		</select>
     	</div>
     	<div class="col-xs-2">	

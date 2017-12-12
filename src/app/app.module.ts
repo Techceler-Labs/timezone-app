@@ -10,6 +10,8 @@ import { TimezoneDisplayComponent } from './timezone-display.component';
 
 import { CountryTimezoneSearchService } from './country-timezone-search.service';
 import { CountryDataService } from './country-data.service';
+import { MomentModule } from 'angular2-moment';
+import {MomentTimezoneModule} from 'angular-moment-timezone';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { CountryDataService } from './country-data.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MomentModule,
+    MomentTimezoneModule,
     ButtonsModule.forRoot()
   ],
   providers: [CountryTimezoneSearchService,CountryDataService],

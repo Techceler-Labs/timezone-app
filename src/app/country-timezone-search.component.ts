@@ -17,30 +17,29 @@ import { TimezoneDisplayComponent } from './timezone-display.component';
 })
 
 export class CountryTimezoneSearchComponent implements OnInit {
-    selectedCountry = '';
-   
+    selectedCountryLocation = '';
+    selectedCountry : Country;
+    selectedCountryName = '';
+
     countries: Country[] = [];
-
-
-	currentCountrytimeZone: Countrytimezone;
-
-	displayable = false; 
+    currentCountrytimeZone: Countrytimezone;
+    
+    displayable = false; 
   	
   	constructor(
         private countryTimezoneSearchService: CountryTimezoneSearchService, private countryDataService: CountryDataService) {}
   
-   showCountries (){
-    this.displayable = true;
-   } 
+    showCountries (){
+      this.displayable = true;
+    } 
 
    addCountry(){
-	    console.log('selected country: ' + this.selectedCountry);
-   		if (this.selectedCountry.length>0){
+	    console.log('selected country: ' + this.selectedCountryLocation);
+   		if (this.selectedCountryLocation!=''){
         this.currentCountrytimeZone = new Countrytimezone();
-   			this.countryTimezoneSearchService.search(this.selectedCountry).then(c  => this.currentCountrytimeZone = c);
-			
-
-			console.log('dfsdf'+this.currentCountrytimeZone.localTime);
+ 				this.countryTimezoneSearchService.search(this.selectedCountryLocation,this.selectedCountryName).then(c  => this.currentCountrytimeZone = c);
+        this.selectedCountryLocation = '';
+			  console.log('dfsdf'+this.currentCountrytimeZone.currentTimeStamp);
    		}
    		else {
    		     console.log('No country selected');
@@ -49,12 +48,12 @@ export class CountryTimezoneSearchComponent implements OnInit {
    
    onCountryChange(newValue) {
     console.log(newValue);
-    this.selectedCountry = newValue;
+    this.selectedCountryLocation = newValue.value;
+    this.selectedCountryName = newValue.name;  
   }
 
   ngOnInit(): void {
-    this.countryDataService.getCountries().then(c  => this.countries = c);
+    this.countries = this.countryDataService.getCountries();
     this.addCountry();
   }
-
 }
