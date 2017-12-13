@@ -6,3 +6,22 @@
     flex: 1;
     border: 1px solid #000;
 }
+
+.title {
+    background-color: burlywood;
+    color: #fff;
+}
+
+.title-padding {
+    margin-left: 4px;
+}
+.mainu {
+        background-color:cornsilk;
+        font-family: 'Fira Sans', sans-serif;
+        padding: 2px;   
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+
+}

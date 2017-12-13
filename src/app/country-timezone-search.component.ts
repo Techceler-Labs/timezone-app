@@ -13,6 +13,7 @@ import { TimezoneDisplayComponent } from './timezone-display.component';
 @Component ({
 	selector : 'country-timezone-search',
 	templateUrl : './country-timezone-search.component.html',
+  styleUrls: ['./app.component.css'],
 	providers : [CountryTimezoneSearchService]
 })
 

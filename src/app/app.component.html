@@ -1,8 +1,17 @@
-<div class="container">
-	<div class="row col-xs-12"> 
-		<h1 align="center">
-  			{{title}}
-		</h1>
+<div class="container-fluid">
+	<div class="row"> 
+		<div class="col-md-12 title">		
+			<h1 class="title-padding">
+				{{title}}
+			</h1> 
+			<h5 class="title-padding">
+				A simple app to get to know all about countries in the world, 
+				<br>Get all the information you need,right here! 
+			</h5> 
+		</div>
 	</div>
+	<div>
+		<country-timezone-search></country-timezone-search>
+	</div>	
 </div>
-<country-timezone-search></country-timezone-search>
+

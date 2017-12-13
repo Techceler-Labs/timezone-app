@@ -1,24 +1,14 @@
-<div align="center" id="search-component" class="container">
-    <div class="row"  style="padding:10px;padding-bottom:1px;">
-  		<a href="#" (click)="showCountries()"><h3>Select a location</h3></a>
-  	</div>
-  	<div  class="row" align="center"  style="padding:1px;">	
-  		<div  class="col-xs-4">
-  		</div>	
-    	
-  		<div  class="col-xs-2">
-    		<select [(ngModel)]="selectedCountry" (ngModelChange)="onCountryChange($event)"  class="form-control">
-       			<option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
-    		</select>
-    	</div>
-    	<div class="col-xs-2">	
-    		<button type="button" class="btn btn-primary" (click)="addCountry()">Get me the current time!</button>
-   		</div>    
-   		<div class="col-xs-4">
-   		</div>	
-    	
-  	</div>
-  	<div class="row"> 	
-		<display-timezones [timezone]="currentCountrytimeZone" *ngIf="currentCountrytimeZone!=null"></display-timezones>
-	</div>
+<div id="search-component" class="row mainu">
+  	<div  class="col-lg-6">
+		<select [(ngModel)]="selectedCountry" (ngModelChange)="onCountryChange($event)" class="form-control">
+			<option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
+    	</select>
+    </div>
+    <div class="col-lg-3">	
+		<button type="button" class="btn btn-default" (click)="addCountry()">Get selected Country info!</button>
+	</div>        	
 </div>	
+<div>
+		<display-timezones [timezone]="currentCountrytimeZone" *ngIf="currentCountrytimeZone!=null"></display-timezones>
+</div>
+
