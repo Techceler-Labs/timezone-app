@@ -15,6 +15,7 @@
 .title-padding {
     margin-left: 4px;
 }
+
 .mainu {
         background-color:cornsilk;
         font-family: 'Fira Sans', sans-serif;
@@ -23,5 +24,12 @@
 
 body {
     font-family: 'Fira Sans', sans-serif;
-
 }
+
+.country-time-info {
+    font-family: 'Fira Sans', sans-serif;
+    color: #fff;
+    text-align:center;
+    height:100vh;
+}
+

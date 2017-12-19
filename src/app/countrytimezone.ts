@@ -7,4 +7,5 @@ export class Countrytimezone {
   timeZoneId: string;
   timeZoneName: string; 	
   currentTimeStamp: number;
+  bgColor : string;
 }

@@ -15,7 +15,7 @@ export class CountryTimezoneSearchService {
 	constructor (private http: Http){}
      public setdate = moment(); // today date
 
-	search (latlong: string,countryName:string): Promise<Countrytimezone> {
+	search (latlong: string,countryName:string,color: string): Promise<Countrytimezone> {
 		this.timestamp = new Date().getTime()/1000;
 		console.log('searching for '+ latlong + '.....the timestamp is ' + this.timestamp);
 		let url = 'https://maps.googleapis.com/maps/api/timezone/json?location='+latlong+'&timestamp='+this.timestamp +'&key=AIzaSyAMqkI7w4kmzSC7hrRV1RLCA6j2IMiJMZY';
@@ -38,6 +38,7 @@ export class CountryTimezoneSearchService {
 		countryToReturn.timeZoneName = body.timeZoneName;
 		countryToReturn.currentTimeStamp = (body.dstOffset+this.timestamp+body.rawOffset);
 		countryToReturn.localTime = this.setdate.tz(body.timeZoneId).format('HH:mm');
+		countryToReturn.bgColor = color;
 		return countryToReturn;
 		}).catch(this.handleError);
 	} 

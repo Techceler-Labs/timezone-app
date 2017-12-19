@@ -21,7 +21,7 @@ export class CountryTimezoneSearchComponent implements OnInit {
     selectedCountryLocation = '';
     selectedCountry : Country;
     selectedCountryName = '';
-
+    selectedColor = '';
     countries: Country[] = [];
     currentCountrytimeZone: Countrytimezone;
     
@@ -37,13 +37,12 @@ export class CountryTimezoneSearchComponent implements OnInit {
    addCountry(){
 	    console.log('selected country: ' + this.selectedCountryLocation);
    		if (this.selectedCountryLocation!=''){
-        this.currentCountrytimeZone = new Countrytimezone();
- 				this.countryTimezoneSearchService.search(this.selectedCountryLocation,this.selectedCountryName).then(c  => this.currentCountrytimeZone = c);
+ 				this.countryTimezoneSearchService.search(this.selectedCountryLocation,this.selectedCountryName,this.selectedColor).then(c  => this.currentCountrytimeZone = c);
         this.selectedCountryLocation = '';
-			  console.log('dfsdf'+this.currentCountrytimeZone.currentTimeStamp);
    		}
    		else {
    		     console.log('No country selected');
+           this.currentCountrytimeZone = new Countrytimezone();
    		}
    }
    
@@ -51,10 +50,10 @@ export class CountryTimezoneSearchComponent implements OnInit {
     console.log(newValue);
     this.selectedCountryLocation = newValue.value;
     this.selectedCountryName = newValue.name;  
+    this.selectedColor = newValue.color;
   }
 
   ngOnInit(): void {
     this.countries = this.countryDataService.getCountries();
-    this.addCountry();
   }
 }

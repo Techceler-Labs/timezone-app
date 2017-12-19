@@ -1,8 +1,10 @@
-<div class="row" *ngIf="countryTimeZones?.length > 1" style="display: flex;">
-	<div *ngFor="let timezone of countryTimeZones" style="flex: 1;border: 0px solid #000;">
-		<div style="padding:0px;"><h3><b>{{timezone.countryName}}</b></h3> </div>
-		<div style="padding:0px;"><h5>{{timezone.timeZoneId}} </h5></div>
-		<div style="padding:15px;"><h3>{{timezone.localTime}} </h3></div>
+<div class="row" *ngIf="countryTimeZones?.length != 0" style="display: flex;text-align:center;">
+	<div *ngFor="let timezone of countryTimeZones" style="flex: 1;margin-top:0px;border: 0px solid #000;">
+		<div (click)="showMap(timezone)" [style.backgroundColor]="timezone.bgColor" class="country-time-info">
+			<div style="padding-top:100px;text-align:center;" ><h3><b>{{timezone.countryName}}</b></h3> </div>
+			<div style="padding:0px;"><h5>{{timezone.timeZoneId}} </h5></div>
+			<div style="padding:12px;"><h1>{{timezone.localTime}} </h1></div>
+		</div>
 	</div>	
 </div>	<!-- Timezone container div --> 
 
